@@ -1,0 +1,14 @@
+@charset "utf-8";
+// triangle 输出三角 @size ,@color,@direction
+.triangle-up(@size,@color){height: 0; width: 0; border-color: transparent;  border-style: solid;  border-width: @size; border-bottom-width: @size;   border-bottom-color:@color ; }
+.triangle-down(@size,@color){height: 0; width: 0; border-color: transparent;  border-style: solid;  border-width: @size;border-top-width: @size;  border-top-color:@color ; }
+.triangle-left(@size,@color){height: 0; width: 0; border-color: transparent;  border-style: solid;  border-width: @size;border-right-width: @size;  border-right-color:@color ; }
+.triangle-right(@size,@color){height: 0; width: 0; border-color: transparent;  border-style: solid;  border-width: @size;border-left-width: @size;  border-left-color:@color ; }
+.triangle-up-right(@size,@color){height: 0; width: 0;  border-top: @size solid @color;border-left: @size solid transparent;}
+.triangle-up-left(@size,@color){height: 0; width: 0;  border-top: @size solid @color; border-right: @size solid transparent;}
+.triangle-down-right(@size,@color){height: 0; width: 0;  border-bottom: @size solid @color;border-left: @size solid transparent;}
+.triangle-down-left(@size,@color){height: 0; width: 0;  border-bottom: @size solid @color; border-right: @size solid transparent;}
+
+
+
+
