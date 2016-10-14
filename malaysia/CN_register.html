@@ -1,0 +1,300 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  </head>
+   <body>
+   <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+   <div class="page-group">
+     <!-- CN_register.html start -->
+     <div class="page" id="register">
+       <header class="bar bar-nav">
+         <a class="button button-link button-nav pull-left back">
+           <span class="icon icon-left"></span>
+         </a>
+         <a class="icon pull-right translate">中</a>
+         <a class="icon pull-right translate external" href="index.html#register">英</a>
+         <h1 class="title uppercase">注册</h1>
+       </header>
+       <div class="content registerbg">
+         <div class="contail">
+           <div class="row no-gutter favorite">
+             <span class="font col-10 red animated rubberBand">&#xe6b7;</span>
+             <div class="col-90">
+               <span class="weight600 black animated fadeIn">温馨提示: </span>
+               <p class="animated fadeIn">如果拒绝注册提供的信息是不完整的，主办机构保留权利</p>
+             </div>
+           </div>
+           <div class="row no-gutter input animated bounceInLeft">
+             <form name="" id="form2" class="data">
+               <ul>
+                 <li>
+                   <div class="col-100">姓名</div>
+                   <input class="col-100" data-required="true" data-descriptions="username">
+                 </li>
+                 <li>
+                   <div class="col-100">名称</div>
+                   <input class="col-100" data-required="true" data-descriptions="userdescription">
+                 </li>
+                 <li>
+                   <div class="col-100">单位号码</div>
+                   <input class="col-100" data-required="true" data-descriptions="Office">
+                 </li>
+                 <li>
+                   <div class="col-100">手机号码</div>
+                   <input class="col-100" data-required="true" data-descriptions="Mobile" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                 </li>
+                 <li>
+                   <div class="col-100">邮箱</div>
+                   <input class="col-100" data-validate="Email" data-describedby="Email-description">
+                 </li>
+                 <li>
+                   <div class="col-100">公司名称</div>
+                   <input class="col-100" data-required="true" data-descriptions="Company">
+                 </li>
+                 <li>
+                   <div class="col-100">你的公司的主要活动是什么?</div>
+                   <input class="col-100" data-required="true" data-descriptions="activity">
+                 </li>
+                 <li>
+                   <div class="col-100">请注明你感兴趣的产品:</div>
+                   <input class="col-100" type="text" id="picker1" data-required="true" data-descriptions="indicate">
+                 </li>
+                 <li>
+                   <div class="col-100">请注明访问的目的:</div>
+                   <input class="col-100" type="text" id="picker2" data-required="true" data-descriptions="visit">
+                 </li>
+                 <li>
+                   <div class="col-100">你怎么知道FEFM展览呢?</div>
+                   <input class="col-100" type="text" id="picker3" data-required="true" data-descriptions="exhibition">
+                 </li>
+                 <li>
+                   <div class="col-100">你参与购买或推荐的产品为您的公司吗?</div>
+                   <input class="col-100" data-required="true" data-descriptions="products" id="picker5">
+                 </li>
+                 <li>
+                   <div class="col-100">是的,我/我们希望:</div>
+                   <input class="col-100" type="text" id="picker4" data-required="true" data-descriptions="Yes">
+                 </li>
+               </ul>
+               <!--同意按钮-->
+               <div class="item-input">
+                 <label class="label-switch">
+                   <input id="agree" type="checkbox" id="agree" name="favourite" data-required="true" data-descriptions="favourite" data-describedby="favourite-description">
+                   <div class="checkbox"></div>
+                 </label>
+                 <label for="agree">我同意条款和条件</label>
+               </div>
+               <input type="submit" class="uppercase button button-fill button-danger" value="提交">
+             </form>
+             <script type="text/javascript">
+               $(function(){
+                 $.mvalidateExtend({
+                   Email:{
+                     required : true,
+                     pattern : /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                     each:function(){
+
+                     },
+                     descriptions:{
+                       required : '<div class="field-invalidmsg">请输入你的邮箱</div>',
+                       pattern : '<div class="field-invalidmsg">邮箱格式不正确</div>',
+                       valid : '<div class="field-validmsg">正确</div>'
+                     }
+                   }
+                 });
+                 $("#form2").mvalidate({
+                   type:1,
+                   onKeyup:true,
+                   sendForm:true,
+                   firstInvalidFocus:false,
+                   valid:function(event,options){
+                     //点击提交按钮时,表单通过验证触发函数
+                     alert("验证通过！接下来可以做你想做的事情啦！");
+                     event.preventDefault();
+                   },
+                   invalid:function(event, status, options){
+                     //点击提交按钮时,表单未通过验证触发函数
+                   },
+                   eachField:function(event,status,options){
+                     //点击提交按钮时,表单每个输入域触发这个函数 this 执向当前表单输入域，是jquery对象
+                   },
+                   eachValidField:function(val){},
+                   eachInvalidField:function(event, status, options){},
+                   descriptions:{
+                     username:{
+                       required : '请输入你的姓名'
+                     },
+                     userdescription:{
+                       required : '请输入你的名称'
+                     },
+                     Office:{
+                       required : '请输入你的单位号码'
+                     },
+                     Mobile:{
+                       required : '请输入你的手机号码'
+                     },
+                     Company:{
+                       required : '请输入你的公司名称'
+                     },
+                     activity:{
+                       required : '你的公司的主要活动是什么?'
+                     },
+                     indicate:{
+                       required : '请选择请注明你感兴趣的产品'
+                     },
+                     visit:{
+                       required : '请选择注明访问的目的'
+                     },
+                     exhibition:{
+                       required : '请选择你怎么知道FEFM展览呢?'
+                     },
+                     products:{
+                       required : '请选择你参与购买或推荐的产品为您的公司吗?'
+                     },
+                     Yes:{
+                       required : '请选择是否希望'
+                     },
+                     favourite:{
+                       required : '请选择同意条款和条件'
+                     }
+                   }
+                 });
+               })
+             </script>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- the end of register.html -->
+
+
+     <script>
+       $(function () {
+         'use strict';
+         $("#picker1").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['Option name', 'Selected Option name', 'Option name', 'Option name', 'Option name', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+
+         $("#picker2").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['Option name', 'Selected Option name', 'Option name', 'Option name', 'Option name', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $("#picker5").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['Option name', 'Selected Option name', 'Option name', 'Option name', 'Option name', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $("#picker3").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['Option name', 'Selected Option name', 'Option name', 'Option name', 'Option name', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $("#picker4").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['Option name', 'Selected Option name', 'Option name', 'Option name', 'Option name', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $.init();
+       });
+     </script>
+     <script>
+       !function(win) {
+         function resize() {
+           var domWidth = domEle.getBoundingClientRect().width;
+           if(domWidth / v > 540){
+             domWidth = 540 * v;
+           }
+           win.rem = domWidth / 16;
+           domEle.style.fontSize = win.rem + "px";
+         }
+         var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+         if (viewport) {
+           //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+           var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+           if(o){
+             initial_scale = parseFloat(o[2]);
+             v = parseInt(1 / initial_scale);
+           }
+         } else {
+           if (flexible) {
+             var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+             if(o){
+               v = parseFloat(o[2]);
+               initial_scale = parseFloat((1 / v).toFixed(2))
+             }
+           }
+         }
+         if (!v && !initial_scale) {
+           var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+           v = win.devicePixelRatio;
+           v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+         }
+         //没有viewport标签的情况下
+         if (domEle.setAttribute("data-dpr", v), !viewport) {
+           if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+             domEle.firstElementChild.appendChild(viewport)
+           } else {
+             var m = dom.createElement("div");
+             m.appendChild(viewport), dom.write(m.innerHTML)
+           }
+         }
+         win.dpr = v;
+         win.addEventListener("resize", function() {
+           clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+         }, false);
+         win.addEventListener("pageshow", function(b) {
+           b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+         }, false);
+         /* 个人觉得没必要完成后就把body的字体设置为12
+          "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+          //dom.body.style.fontSize = 12 * v + "px"
+          }, false);
+          */
+         resize();
+       }(window);
+     </script>
+   </div>
+</body>

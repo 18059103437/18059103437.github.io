@@ -1,0 +1,174 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+   <body>
+   <div class="page-group">
+     <div class="page">
+       <header class="bar bar-nav">
+         <a class="button button-link button-nav pull-left back">
+           <span class="icon icon-left"></span>
+         </a>
+         <h1 class="title uppercase">Exhibitors List</h1>
+       </header>
+       <div class="content listdetail">
+         <dl class="smtitle">
+           <dt>Fujian Export Fair (Kuala Lumpur) 2016 Concurrently with Fujian Brand on Maritime Silk Road-Kuala Lumpur </dt>
+           <dd>China and Malaysia, two neighbours facing each other across the sea, enjoy a time-honoured friendship, with the trading record dated back to Common Era. With complimentary and mutual beneficial economic relationship, China has been Malaysia’s largest trading partner for seven years straight, and Malaysia is now China’s biggest trading partner among ASEAN countries. Among which Fujian and Malaysia’s trade volume has topped 4.34 billion dollars. China has set the goal to complete the building of a moderately prosperous society in all respects by 2020. It has much in common with Malaysia’s Vision 2020. As China is advancing the initiative of the Silk Road Economic Belt and the 21st Century Maritime Silk Road, encouraging mass entrepreneurship and innovation, and transforming and upgrading its economic structure, Malaysia is gearing toward all-round economic transformation </dd>
+         </dl>
+       </div>
+       <!-- 工具栏 -->
+       <nav class="bar bar-tab fontSize">
+         <span class="uppercase">font size:</span>
+         <ul>
+           <li>L</li>
+           <li class="active">M</li>
+           <li>S</li>
+         </ul>
+         <div class="clear"></div>
+       </nav>
+     </div>
+
+     <script>
+       $(".fontSize ul").children("li").click(function(){
+         $(this).addClass("active").siblings().removeClass("active");
+         switch($(this).index()){
+           case 0 : $(".smtitle dt").css("font-size","1.3rem");$(".smtitle dd").css("font-size","1rem");
+             break;
+           case 1 : $(".smtitle dt").css("font-size","1.1rem");$(".smtitle dd").css("font-size","0.85rem");
+             break;
+           case 2 : $(".smtitle dt").css("font-size","0.9rem");$(".smtitle dd").css("font-size","0.7rem");
+             break;
+         }
+       });
+       $(function () {
+         $("#picker1").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-left">按钮</button>\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">标题</h1>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $("#picker2").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-left">按钮</button>\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">标题</h1>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $("#picker3").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-left">按钮</button>\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">标题</h1>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $("#picker4").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-left">按钮</button>\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">标题</h1>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+             }
+           ]
+         });
+         $.init();
+       });
+     </script>
+     <!-- rem 自适应 -->
+     <script>
+       !function(win) {
+         function resize() {
+           var domWidth = domEle.getBoundingClientRect().width;
+           if(domWidth / v > 540){
+             domWidth = 540 * v;
+           }
+           win.rem = domWidth / 16;
+           domEle.style.fontSize = win.rem + "px";
+         }
+         var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+         if (viewport) {
+           //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+           var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+           if(o){
+             initial_scale = parseFloat(o[2]);
+             v = parseInt(1 / initial_scale);
+           }
+         } else {
+           if (flexible) {
+             var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+             if(o){
+               v = parseFloat(o[2]);
+               initial_scale = parseFloat((1 / v).toFixed(2))
+             }
+           }
+         }
+         if (!v && !initial_scale) {
+           var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+           v = win.devicePixelRatio;
+           v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+         }
+         //没有viewport标签的情况下
+         if (domEle.setAttribute("data-dpr", v), !viewport) {
+           if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+             domEle.firstElementChild.appendChild(viewport)
+           } else {
+             var m = dom.createElement("div");
+             m.appendChild(viewport), dom.write(m.innerHTML)
+           }
+         }
+         win.dpr = v;
+         win.addEventListener("resize", function() {
+           clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+         }, false);
+         win.addEventListener("pageshow", function(b) {
+           b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+         }, false);
+         /* 个人觉得没必要完成后就把body的字体设置为12
+          "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+          //dom.body.style.fontSize = 12 * v + "px"
+          }, false);
+          */
+         resize();
+       }(window);
+     </script>
+
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+   <body>
+   <div class="page-group">
+     <div class="page">
+       <header class="bar bar-nav">
+         <a class="button button-link button-nav pull-left back">
+           <span class="icon icon-left"></span>
+         </a>
+         <a class="icon font pull-right home" href="index.html">&#x348d;</a>
+         <h1 class="title uppercase">展会中文介绍</h1>
+       </header>
+       <div class="content exhibits">
+         <h3>展品范围</h3>
+         <p>
+           <span class="blue">机电及建材展区：</span>
+           大小机械、五金工具、电力设备、汽（摩托）车及配件、微型电机、电动车、助动车、纺织机械及机床设备、农用机械、工程机械、食品加工及包装机械、各类电子通讯设备、数码产品、计算机及周边设备、网络产品、瓷砖、卫浴、建材产品等。 
+         </p>
+         <p>
+           <span class="blue">家居用品、礼品及消费品展区：</span>
+           民用家具、办公家具、休闲家具、家用小家电、各类家居塑料用品、浴室用品、陶瓷\玻璃\不锈钢用品、家用纺织品、竹制家品、家居灯具照明、木制用品、清洁用品、厨房用品及用具、餐桌用具、个人健康护理用品、箱包及皮革制品、玩具礼品、贮存盒以及DIY产品、文具礼品、创意用品，精美礼品、促销礼品、手工艺品，精美玩具等。
+         </p>
+         <p>
+           <span class="blue">食品及饮料展区：</span>
+           罐头食品、稻米、面制品、腌制品、乳、蛋制品、水果、蔬菜、干果、香料、调味品、冷冻食品、果汁饮料、酒类、茶叶、牛奶及奶饮料、咖啡及咖啡制品、可可、巧克力及巧克力制品、饼干、零食、蜜饯、清真食品等。
+         </p>
+         <p>
+           <span class="blue">鞋、箱包及服装面料展区：</span>
+           各种男装、女装、童装、内衣、帽子、围巾、家纺、面料、辅料、鞋、运动鞋、箱包、手袋及附件等。
+         </p>
+         <span>
+           <span class="red">备注:</span>国家仅对在网站<span class="purple">http://www.smeimdf.org</span>上公布的有资质的中小企业进行补贴，尚未登记备案的企业敬请立即上网注册。我司将协助申请 “国家中小企业国际市场开拓资金”。
+符合中小企业标准的企业,预计享受以下补贴(补贴以政府相关政策为准):
+         </span>
+         <p class="red">①	 福建省企业(厦门除外)可享受,第一个摊位补贴19800元，第二个摊位补贴9900元，第三个摊位及以上补贴6600元;</p>
+         <p class="red">②  泉州市重点项目补贴,泉州企业可享受,每个摊位8000元补贴(补贴摊位有限,先到先得)。</p>
+       </div>
+       <nav class="bar bar-tab fontSize appointment">
+         <a href="#" class="open-about">立即预约</a>
+       </nav>
+     </div>
+     <!-- About Popup -->
+     <div class="popup popup-about">
+       <div class="content-block">
+         <a href="#" class="close-popup"><img src="images/close.png" class="close animated bounceInDown"></a>
+         <div class="clear"></div>
+         <div class="row no-gutter input animated bounceInLeft">
+           <form name="" id="form2" class="data">
+             <ul>
+               <li>
+                 <div class="col-100">姓名</div>
+                 <input class="col-100" data-required="true" data-descriptions="username">
+               </li>
+               <li>
+                 <div class="col-100">预约时间</div>
+                 <input id="picker-name" class="col-100" data-required="true" data-descriptions="time">
+               </li>
+               <li>
+                 <div class="col-100">手机号码</div>
+                 <input class="col-100" data-required="true" data-descriptions="Mobile" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+               </li>
+               <li>
+                 <div class="col-100">约见地点</div>
+                 <input class="col-100" id="place" data-required="true" data-descriptions="place">
+               </li>
+             </ul>
+             <input type="submit" class="uppercase button button-fill button-danger" value="立即预约">
+           </form>
+           <script type="text/javascript">
+             $(function(){
+               $.mvalidateExtend({
+                 Email:{
+                   required : true,
+                   pattern : /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                   each:function(){
+
+                   },
+                   descriptions:{
+                     required : '<div class="field-invalidmsg">请输入你的邮箱</div>',
+                     pattern : '<div class="field-invalidmsg">邮箱格式不正确</div>',
+                     valid : '<div class="field-validmsg">正确</div>'
+                   }
+                 }
+               });
+               $("#form2").mvalidate({
+                 type:1,
+                 onKeyup:true,
+                 sendForm:true,
+                 firstInvalidFocus:false,
+                 valid:function(event,options){
+                   //点击提交按钮时,表单通过验证触发函数
+                   alert("验证通过！接下来可以做你想做的事情啦！");
+                   event.preventDefault();
+                 },
+                 invalid:function(event, status, options){
+                   //点击提交按钮时,表单未通过验证触发函数
+                 },
+                 eachField:function(event,status,options){
+                   //点击提交按钮时,表单每个输入域触发这个函数 this 执向当前表单输入域，是jquery对象
+                 },
+                 eachValidField:function(val){},
+                 eachInvalidField:function(event, status, options){},
+                 descriptions:{
+                   username:{
+                     required : '请输入你的姓名'
+                   },
+                   time:{
+                     required : '请选择预约时间'
+                   },
+                   place:{
+                     required : '请选择约见地点'
+                   },
+                   userdescription:{
+                     required : '请输入你的名称'
+                   },
+                   Office:{
+                     required : '请输入你的单位号码'
+                   },
+                   Mobile:{
+                     required : '请输入你的手机号码'
+                   },
+
+                   Company:{
+                     required : '请输入你的公司名称'
+                   },
+                   activity:{
+                     required : '你的公司的主要活动是什么?'
+                   },
+                   indicate:{
+                     required : '请选择请注明你感兴趣的产品'
+                   },
+                   visit:{
+                     required : '请选择注明访问的目的'
+                   },
+                   exhibition:{
+                     required : '请选择你怎么知道FEFM展览呢?'
+                   },
+                   products:{
+                     required : '请选择你参与购买或推荐的产品为您的公司吗?'
+                   },
+                   Yes:{
+                     required : '请选择是否希望'
+                   },
+                   favourite:{
+                     required : '请选择同意条款和条件'
+                   }
+                 }
+               });
+             })
+           </script>
+         </div>
+       </div>
+     </div>
+
+
+   <!--<script>
+     $(".fontSize ul").children("li").click(function(){
+       $(this).addClass("active").siblings().removeClass("active");
+       switch($(this).index()){
+         case 0 : $(".exhibits p").css("font-size","0.85rem");$(".exhibits span").css("font-size","0.9rem");
+           break;
+         case 1 : $(".exhibits p").css("font-size","0.7rem");$(".exhibits span").css("font-size","0.75rem");
+           break;
+         case 2 : $(".exhibits p").css("font-size","0.55rem");$(".exhibits span").css("font-size","0.6rem");
+           break;
+       }
+     });
+   </script>-->
+     <script>
+       $(function () {
+         'use strict';
+         $.config = {
+           autoInit: true
+         }
+         $(document).on('click','.open-about', function () {
+           $.popup('.popup-about');
+         });
+         $("#picker-name").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+  <button class="button button-link pull-right close-picker">确定</button>\
+  <h1 class="title">选择预约时间</h1>\
+  </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['12月']
+               //如果你希望显示文案和实际值不同，可以在这里加一个displayValues: [.....]
+             },
+             {
+               textAlign: 'center',
+               values: ['8日', '9日', '10日', '11日']
+             },
+             {
+               textAlign: 'center',
+               values: ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00','17:00','18:00']
+             }
+           ]
+         });
+         $("#place").picker({
+           toolbarTemplate: '<header class="bar bar-nav">\
+    <button class="button button-link pull-right close-picker">确定</button>\
+    <h1 class="title">选择约见地点</h1>\
+    </header>',
+           cols: [
+             {
+               textAlign: 'center',
+               values: ['摊位', '会议室']
+             }
+           ]
+         });
+         $.init();
+       });
+     </script>
+   <!-- rem 自适应 -->
+   <script>
+     !function(win) {
+       function resize() {
+         var domWidth = domEle.getBoundingClientRect().width;
+         if(domWidth / v > 540){
+           domWidth = 540 * v;
+         }
+         win.rem = domWidth / 16;
+         domEle.style.fontSize = win.rem + "px";
+       }
+       var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+       if (viewport) {
+         //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+         var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+         if(o){
+           initial_scale = parseFloat(o[2]);
+           v = parseInt(1 / initial_scale);
+         }
+       } else {
+         if (flexible) {
+           var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+           if(o){
+             v = parseFloat(o[2]);
+             initial_scale = parseFloat((1 / v).toFixed(2))
+           }
+         }
+       }
+       if (!v && !initial_scale) {
+         var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+         v = win.devicePixelRatio;
+         v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+       }
+       //没有viewport标签的情况下
+       if (domEle.setAttribute("data-dpr", v), !viewport) {
+         if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+           domEle.firstElementChild.appendChild(viewport)
+         } else {
+           var m = dom.createElement("div");
+           m.appendChild(viewport), dom.write(m.innerHTML)
+         }
+       }
+       win.dpr = v;
+       win.addEventListener("resize", function() {
+         clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+       }, false);
+       win.addEventListener("pageshow", function(b) {
+         b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+       }, false);
+       /* 个人觉得没必要完成后就把body的字体设置为12
+        "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+        //dom.body.style.fontSize = 12 * v + "px"
+        }, false);
+        */
+       resize();
+     }(window);
+   </script>
+   </div>
+   </body>
+</html>

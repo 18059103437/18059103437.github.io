@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+   <body>
+   <div class="page-group">
+     <div class="page">
+       <header class="bar bar-nav">
+         <a class="button button-link button-nav pull-left back">
+           <span class="icon icon-left"></span>
+         </a>
+         <h1 class="title uppercase">register success</h1>
+       </header>
+       <div class="content success">
+         <div class="alert">
+           <h1 class="icon font red">&#xe6a1;</h1>
+           <h2 class="red">Congratulations</h2>
+           <h3>Registration Success.</h3>
+           <h3 class="red">1564-4512-7851-4512</h3>
+           <p>Your unique identification code</p>
+         </div>
+         <p><a href="index.html" class="button button-fill button-danger uppercase">back home </a></p>
+       </div>
+     </div>
+   <!-- rem 自适应 -->
+   <script>
+     !function(win) {
+       function resize() {
+         var domWidth = domEle.getBoundingClientRect().width;
+         if(domWidth / v > 540){
+           domWidth = 540 * v;
+         }
+         win.rem = domWidth / 16;
+         domEle.style.fontSize = win.rem + "px";
+       }
+       var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+       if (viewport) {
+         //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+         var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+         if(o){
+           initial_scale = parseFloat(o[2]);
+           v = parseInt(1 / initial_scale);
+         }
+       } else {
+         if (flexible) {
+           var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+           if(o){
+             v = parseFloat(o[2]);
+             initial_scale = parseFloat((1 / v).toFixed(2))
+           }
+         }
+       }
+       if (!v && !initial_scale) {
+         var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+         v = win.devicePixelRatio;
+         v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+       }
+       //没有viewport标签的情况下
+       if (domEle.setAttribute("data-dpr", v), !viewport) {
+         if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+           domEle.firstElementChild.appendChild(viewport)
+         } else {
+           var m = dom.createElement("div");
+           m.appendChild(viewport), dom.write(m.innerHTML)
+         }
+       }
+       win.dpr = v;
+       win.addEventListener("resize", function() {
+         clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+       }, false);
+       win.addEventListener("pageshow", function(b) {
+         b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+       }, false);
+       /* 个人觉得没必要完成后就把body的字体设置为12
+        "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+        //dom.body.style.fontSize = 12 * v + "px"
+        }, false);
+        */
+       resize();
+     }(window);
+   </script>
+   </div>
+   </body>
+</html>

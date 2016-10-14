@@ -1,0 +1,149 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+   <body>
+   <div class="page-group">
+     <div class="page">
+       <header class="bar bar-nav">
+         <a class="button button-link button-nav pull-left back">
+           <span class="icon icon-left"></span>
+         </a>
+         <a class="icon font pull-right home" href="index.html">&#x348d;</a>
+         <h1 class="title uppercase">展会中文介绍</h1>
+       </header>
+       <div class="content listdetail">
+         <dl class="smtitle">
+           <dt>2016年马来西亚福建商品展 </dt>
+           <img src="images/introduction.jpg">
+           <table>
+             <tr>
+               <td>展会时间:</td>
+               <td>2016年12月8-11日</td>
+             </tr>
+             <tr>
+               <td>展会周期:</td>
+               <td>1年1届</td>
+             </tr>
+             <tr>
+               <td>展会规模:</td>
+               <td>10，000平方米</td>
+             </tr>
+             <tr>
+               <td>展会行业:</td>
+               <td>综合类</td>
+             </tr>
+             <tr>
+               <td>展会地点:</td>
+               <td>太子世界贸易中心（PWTC）</td>
+             </tr>
+             <tr>
+               <td>主办机构:</td>
+               <td>ES EVEN MANAGEMENT SDN.BHD.</td>
+             </tr>
+           </table>
+           <dd>中马是隔海相望的近邻，友好交往历史源远流长，最早的商贸往来可以追溯到公元纪年之前。中国连续七年成为马来西亚最大贸易伙伴，马来西亚也是中国在东盟国家中的最大贸易伙伴，中马贸易已占中国东盟贸易的五分之一。其中2015年1-12月，福建与马来西亚进出口贸易总额为43.44亿美元。中国2020年全面建成小康社会的宏伟蓝图和马来西亚“2020宏愿”的美好愿景高度契合。中国推进“一带一路”倡议，实施“大众创业，万众创新”，加快经济结构转型升级，与马来西亚全面推行经济转型、打造更具活力的新型经济体规划互为发展机遇。在这一历史契机下，为进一步推动两地经济和贸易交流，马来西亚福建商品展暨福建品牌海丝行马来西亚展将于2016年12月8日-11日于在吉隆坡太子世界贸易中心再次举办。
+             福建是历史上海上丝绸之路的重要起点，在“一带一路”大战略指引下，福建与海丝沿线国家合作将迎来更广阔的空间。福建省从2008年起就开始组织我省企业参加“马来西亚福建商品展”，到2015年已连续组</dd>
+         </dl>
+       </div>
+       <!-- 工具栏 -->
+       <nav class="bar bar-tab fontSize">
+         <span class="uppercase">font size:</span>
+         <ul>
+           <li>L</li>
+           <li class="active">M</li>
+           <li>S</li>
+         </ul>
+         <div class="clear"></div>
+       </nav>
+     </div>
+
+     <script>
+       $(".fontSize ul").children("li").click(function(){
+         $(this).addClass("active").siblings().removeClass("active");
+         switch($(this).index()){
+           case 0 : $(".smtitle dt").css("font-size","1.3rem");$(".smtitle dd").css("font-size","1rem");$(".smtitle table tr td").css("font-size","1rem");
+             break;
+           case 1 : $(".smtitle dt").css("font-size","1.1rem");$(".smtitle dd").css("font-size","0.85rem");$(".smtitle table tr td").css("font-size","0.8rem");
+             break;
+           case 2 : $(".smtitle dt").css("font-size","0.9rem");$(".smtitle dd").css("font-size","0.7rem");$(".smtitle table tr td").css("font-size","0.7rem");
+             break;
+         }
+       });
+       $(function () {
+         $.init();
+       });
+     </script>
+     <!-- rem 自适应 -->
+     <script>
+       !function(win) {
+         function resize() {
+           var domWidth = domEle.getBoundingClientRect().width;
+           if(domWidth / v > 540){
+             domWidth = 540 * v;
+           }
+           win.rem = domWidth / 16;
+           domEle.style.fontSize = win.rem + "px";
+         }
+         var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+         if (viewport) {
+           //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+           var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+           if(o){
+             initial_scale = parseFloat(o[2]);
+             v = parseInt(1 / initial_scale);
+           }
+         } else {
+           if (flexible) {
+             var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+             if(o){
+               v = parseFloat(o[2]);
+               initial_scale = parseFloat((1 / v).toFixed(2))
+             }
+           }
+         }
+         if (!v && !initial_scale) {
+           var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+           v = win.devicePixelRatio;
+           v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+         }
+         //没有viewport标签的情况下
+         if (domEle.setAttribute("data-dpr", v), !viewport) {
+           if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+             domEle.firstElementChild.appendChild(viewport)
+           } else {
+             var m = dom.createElement("div");
+             m.appendChild(viewport), dom.write(m.innerHTML)
+           }
+         }
+         win.dpr = v;
+         win.addEventListener("resize", function() {
+           clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+         }, false);
+         win.addEventListener("pageshow", function(b) {
+           b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+         }, false);
+         /* 个人觉得没必要完成后就把body的字体设置为12
+          "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+          //dom.body.style.fontSize = 12 * v + "px"
+          }, false);
+          */
+         resize();
+       }(window);
+     </script>
+   </div>
+</body>
+</html>
