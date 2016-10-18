@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>发布检测</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <include file="Common:ui"/>
+  </head>
+  <body>
+   <div class="page-group">
+      <div class="page page-current">
+          <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Index')}" data-transition='slide-out'>
+              <span class="icon icon-left"></span>
+              返回
+            </a>
+            <h1 class="title">发布车辆</h1>
+          </header>
+           <div class="content">
+           <form  method="post" action="{:U('Member/add_goods')}">
+              <div class="buttons-tab fixed-tab">
+                <a href="#tab1" class="tab-link active button">车辆照片</a>
+                <a href="#tab2" class="tab-link button">车辆信息</a>
+                <a href="#tab3" class="tab-link button">检测报告</a>
+              </div>
+              <div class="tabs">
+               <!--车辆照片-->
+                <div id="tab1" class="tab active">
+                </div>
+               <!--车辆照片end-->
+               <!--车辆信息-->
+                <div id="tab2" class="tab">
+                 <div class="content-block">
+                   <div class="buttons-row">
+                      <a href="#tab1-1" class="tab-link active button">基本信息</a>
+                      <a href="#tab1-2" class="tab-link button">配置信息</a>
+                      <a href="#tab1-3" class="tab-link button">手续信息</a>
+                    </div>
+                    <div class="tabs">
+                       <div class="list-block tab active" id='tab1-1'>
+                         <!--基本信息-->
+                         <include file="jb_info"/>
+                         <!--基本信息end-->
+                       </div>
+                        <div class="list-block tab" id='tab1-2'>
+                         <!--配置信息-->
+                        <include file="pz_info"/>
+                         <!--配置信息end-->
+                       </div>
+                       <div class="list-block tab" id='tab1-3'>
+                         <!--基本信息-->
+                        <include file="sx_info"/>
+                         <!--手续信息end-->
+                       </div>
+                    </div>
+                  </div>
+                </div>
+                <!--车辆信息end-->
+                <div id="tab3" class="tab">
+                  <div class="content-block">
+                   <div class="buttons-row">
+                      <a href="#tab3-1" class="tab-link active button">Tab 1</a>
+                      <a href="#tab3-2" class="tab-link button">Tab 2</a>
+                      <a href="#tab3-3" class="tab-link button">Tab 3</a>
+                    </div>
+                    <div class="tabs">
+                      <p class='tab active' id='tab3-1' style="height:600px">This is tab 1-1 content</p>
+                      <p class='tab' id='tab3-2'>This is tab 1-2 content</p>
+                      <p class='tab' id='tab3-3'>13855589778</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </form>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+        Zepto(function () {
+          'use strict';
+            var _$ = Zepto;
+            _$("#picker1").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">请选择车型</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['两厢车', '三厢车','SUV', 'MPV','敞篷', '跑车','旅行车', '皮卡车','面包车', '特种车','其他']
+                    }
+                ]
+            });
+           _$("#picker2").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">排放标准</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['国一', '国二','国三', '国四','国五','欧1','欧2','欧3','欧4','欧5','欧6']
+                    }
+                ]
+            });
+            _$("#picker3").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">进气方式</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['自然进气', '涡轮增压','机械增压', '双增压','双涡轮增压','其他']
+                    }
+                ]
+            });
+            _$("#picker4").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">供油系统</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['汽油', '柴油','电动', '混合','其他']
+                    }
+                ]
+            });
+            _$("#picker5").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">变速箱形式</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['MT-手动','AT-自动','AMT-机械式变速','CVT-无极','DSG-双离合','手自一体','其他']
+                    }
+                ]
+            });
+            _$("#picker6").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">驱动形式</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['FR-前置后驱','FF-前置前驱','MR-中置后驱','RR-后置后驱','FWD-前置四驱','MWD-中置四驱','RWD-后置四驱','其他']
+                    }
+                ]
+            });
+            _$("#picker7").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">车身颜色</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['黑色','白色','红色','蓝色','绿色','黄色','紫色','银色','香槟色','深灰色','其他']
+                    }
+                ]
+             });
+
+             _$("#picker8").datePicker({
+                    value: ['2000', '01', '01']
+              });
+            _$("#picker9").datePicker({
+                    value: ['2000', '01', '01']
+              });
+              _$("#picker10").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">车辆性质</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['私户','公户','外事车']
+                    }
+                ]
+             });
+             _$("#picker11").picker({
+              toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">使用性质</h1>\
+              </header>',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['营运','非营运','营转非','租赁','租赁非营运']
+                    }
+                ]
+             });   
+            _$("#city1").cityPicker({
+                value: []
+            });
+             _$("#city2").cityPicker({
+                value: []
+            });
+            Zepto.init();
+        });
+    </script>
+</html>
+
